@@ -63,3 +63,18 @@
   background: #57A957;
   border: 1px solid #4c964d;
   color: #FFF; }
+  
+.navbar-inverse .brand {
+	border-bottom: none;
+	border-right: none;
+}
+
+.navbar-inverse .nav > li > a {
+	border-bottom: none;
+	border-right: none;
+	border-left: none;
+}
+
+body > .navbar .brand {
+	color: white;
+}
