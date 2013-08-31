@@ -78,3 +78,57 @@
 body > .navbar .brand {
 	color: white;
 }
+
+.navbar .nav > li:first-child > a {
+   -webkit-border-radius: 0 0 0 0;
+   -moz-border-radius: 0 0 0 0;
+   border-radius: 0 0 0 0;
+}
+
+.navbar .nav ul li:last-child {
+   -webkit-border-radius: 0 0 0 0;
+   -moz-border-radius: 0 0 0 0;
+   border-radius: 6px;
+}
+
+.navbar-inverse.navbar .nav li.open.dropdown > .dropdown-toggle,
+.navbar-inverse.navbar .nav li.active.dropdown > .dropdown-toggle,
+.navbar-inverse.navbar .nav li.open.active.dropdown > .dropdown-toggle {
+   background-color: rgb(52, 73, 94);
+   border-bottom-color: rgb(52, 73, 94);
+   color: #1abc9c;
+}
+
+.navbar-inverse.navbar .nav li.open.dropdown > .dropdown-toggle .caret,
+.navbar-inverse.navbar .nav li.active.dropdown > .dropdown-toggle .caret,
+.navbar-inverse.navbar .nav li.open.active.dropdown > .dropdown-toggle .caret {
+   border-bottom-color: #1abc9c!important;
+   border-top-color: #1abc9c!important;
+   color: #1abc9c!important;
+}
+
+.navbar-inverse .nav > li.active > a,
+.navbar-inverse .nav > li.active > a:hover,
+.navbar-inverse .nav > li.active > a:focus {
+   padding-left: 20px;
+}
+
+@media (max-width: 979px) {
+  .navbar-inverse .nav-collapse .nav > li > a:hover,
+  .navbar-inverse .nav-collapse .nav > li > a:focus,
+  .navbar-inverse .nav-collapse .dropdown-menu a:hover,
+  .navbar-inverse .nav-collapse .dropdown-menu a:focus {
+    background-color: #34495e;
+  }
+  .navbar-inverse .nav-collapse .nav > li.active > a:hover,
+  .navbar-inverse .nav-collapse .nav > li.active > a:focus,
+  .navbar-inverse .nav-collapse .dropdown-menu a:hover,
+  .navbar-inverse .nav-collapse .dropdown-menu a:focus {
+    background-color: #1abc9c;
+  }
+  .navbar .nav > li:first-child > a {
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   border-radius: 3px;
+  }
+}
