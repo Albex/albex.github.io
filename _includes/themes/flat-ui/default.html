@@ -15,13 +15,13 @@
       <![endif]-->
 
       <!-- Le styles -->
-      <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.css" rel="stylesheet">
-      <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+      <link href="{{ ASSET_PATH }}/css/bootmetro.css" rel="stylesheet">
+      <link href="{{ ASSET_PATH }}/css/bootmetro-responsive.css" rel="stylesheet">
       <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap-docs.css" rel="stylesheet">
-      <link href="{{ ASSET_PATH }}/bootstrap/css/prettify.css" rel="stylesheet">
-      <link href="{{ ASSET_PATH }}/css/font-awesome.min.css" rel="stylesheet">
-      <link href="{{ ASSET_PATH }}/css/flat-ui.css" rel="stylesheet">
-      <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+      <link href="{{ ASSET_PATH }}/css/bootmetro-ui-light.css" rel="stylesheet">
+      <link href="{{ ASSET_PATH }}/css/bootmetro-icons.css" rel="stylesheet">
+
+      <script src="{{ ASSET_PATH }}/js/modernizr-2.6.2.min.js"></script>
 
       <!-- Le fav and touch icons -->
   <!-- Update these with your own images
@@ -40,61 +40,72 @@
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
-			<div class="container-narrow">
-				
-				<button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				
-				<a class="brand" href="{{ HOME_PATH }}" style="text-decoration: none;">{{ site.title }}</a>
+			<div class="container">
+				<div class="row">
+					<div class="span8 offset2">
+						<button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						
+						<a class="brand" href="{{ HOME_PATH }}" style="text-decoration: none;">{{ site.title }}</a>
 
-				<div class="nav-collapse collapse pull-left">
-					<ul class="nav">
-						{% assign pages_list = site.pages %}
-						{% assign group = 'home' %}
-						{% include JB/pages_list %}
-						{% assign pages_list = site.pages %}
-						{% assign group = 'navigation' %}
-						{% include JB/pages_list %}
-					</ul>
+						<div class="nav-collapse collapse pull-left">
+							<ul class="nav">
+								{% assign pages_list = site.pages %}
+								{% assign group = 'home' %}
+								{% include JB/pages_list %}
+								{% assign pages_list = site.pages %}
+								{% assign group = 'navigation' %}
+								{% include JB/pages_list %}
+							</ul>
+						</div>
+					</div>
 				</div>
-				
 			</div>
 		</div>
 	</div>
 
-	<div class="container-narrow">
+	<div class="container">
+		<div class="row">
+			<div class="span8 offset2">
+				<div class="content">
+					{{ content }}
+				</div>
 
-		<div class="content">
-			{{ content }}
+				<hr>
+				<footer>
+					<p>Albex's Home v0.2 &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
+						with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+						and <a href="http://aozora.github.io/bootmetro/index.html" target="_blank">BootMetro</a>
+					</p>
+				</footer>
+
+				{% include JB/analytics %}
+			</div>
 		</div>
-
-		<hr>
-		<footer>
-			<p>Albex's Home v0.2 &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
-				with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-				and <a href="http://designmodo.github.io/Flat-UI/" target="_blank">Flat UI</a>
-			</p>
-		</footer>
-
-		{% include JB/analytics %}
 	</div>
 	
 	<!-- Le Javascript -->
-	<script src="{{ ASSET_PATH }}/js/jquery-1.8.3.min.js"></script>
-	<script src="{{ ASSET_PATH }}/Vjs/jquery-ui-1.10.3.custom.min.js"></script>
-	<script src="{{ ASSET_PATH }}/js/jquery.ui.touch-punch.min.js"></script>
-	<script src="{{ ASSET_PATH }}/js/bootstrap.min.js"></script>
-	<script src="{{ ASSET_PATH }}/js/bootstrap-select.js"></script>
-	<script src="{{ ASSET_PATH }}/js/bootstrap-switch.js"></script>
-	<script src="{{ ASSET_PATH }}/js/flatui-checkbox.js"></script>
-	<script src="{{ ASSET_PATH }}/js/flatui-radio.js"></script>
-	<script src="{{ ASSET_PATH }}/js/jquery.tagsinput.js"></script>
-	<script src="{{ ASSET_PATH }}/js/jquery.placeholder.js"></script>
-	<script src="{{ ASSET_PATH }}/js/jquery.stacktable.js"></script>
-	<script src="{{ ASSET_PATH }}/js/application.js"></script>
+	<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+   	<script src="//code.jquery.com/jquery-1.10.0.min.js"></script>
+   	<script>window.jQuery || document.write("<script src='{{ ASSET_PATH }}/js/jquery-1.10.0.min.js'>\x3C/script>")</script>
+
+
+   	<!--[if IE 7]>
+   	<script type="text/javascript" src="{{ ASSET_PATH }}/js/bootmetro-icons-ie7.js">
+   	<![endif]-->
+
+
+   	<script type="text/javascript" src="{{ ASSET_PATH }}/js/min/bootstrap.min.js"></script>
+   	<script type="text/javascript" src="{{ ASSET_PATH }}/js/bootmetro-panorama.js"></script>
+   	<script type="text/javascript" src="{{ ASSET_PATH }}/js/bootmetro-pivot.js"></script>
+   	<script type="text/javascript" src="{{ ASSET_PATH }}/js/bootmetro-charms.js"></script>
+   	<script type="text/javascript" src="{{ ASSET_PATH }}/js/bootstrap-datepicker.js"></script>
+   	<script type="text/javascript" src="{{ ASSET_PATH }}/js/holder.js"></script>
+   	<script type="text/javascript" src="{{ ASSET_PATH }}/min/Chart.min.js"></script>
+
 	<tester id="tagsinput_tag_autosize_tester" style='left: -9999px; top: -9999px; width: auto; letter-spacing: 0px; font-family: "Lato", sans-serif; font-size: 14px; font-weight: 400; white-space: nowrap; position: absolute;'></tester>
 
 </body>
