@@ -1,127 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>{{ page.title }}</title>
-	{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-	<meta name="author" content="{{ site.author.name }}">
+	<head>
+		<meta charset="utf-8">
+		<title>{{ page.title }}</title>
+		{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+		<meta name="author" content="{{ site.author.name }}">
 
-	<!-- Enable responsive viewport -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Enable responsive viewport -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-      <![endif]-->
+		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 
-      <!-- Le styles -->
-      <link href="{{ ASSET_PATH }}/css/bootmetro.css" rel="stylesheet">
-      <link href="{{ ASSET_PATH }}/css/bootmetro-responsive.css" rel="stylesheet">
-      <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap-docs.css" rel="stylesheet">
-      <link href="{{ ASSET_PATH }}/css/bootmetro-ui-light.css" rel="stylesheet">
-      <link href="{{ ASSET_PATH }}/css/bootmetro-icons.css" rel="stylesheet">
+		<!-- Le styles -->
+		<!-- <link href="{{ ASSET_PATH }}/css/bootmetro.css" rel="stylesheet"> -->
+		<!-- <link href="{{ ASSET_PATH }}/css/bootmetro-responsive.css" rel="stylesheet"> -->
+		<!-- <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap-docs.css" rel="stylesheet"> -->
+		<!-- <link href="{{ ASSET_PATH }}/css/bootmetro-ui-light.css" rel="stylesheet"> -->
+		<!-- <link href="{{ ASSET_PATH }}/css/bootmetro-icons.css" rel="stylesheet"> -->
+		<link href="{{ ASSET_PATH }}/css/bootstrap.css" rel="stylesheet" media="screen">
+		<link href="{{ ASSET_PATH }}/css/style.css" rel="stylesheet">
 
-      <script src="{{ ASSET_PATH }}/js/modernizr-2.6.2.min.js"></script>
+		<!--<script src="{{ ASSET_PATH }}/js/modernizr-2.6.2.min.js"></script>-->
 
-      <script type="text/javascript">
-		<!--
-		(function() {
-		    if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
-		        var msViewportStyle = document.createElement("style");
-		        msViewportStyle.appendChild(
-		            document.createTextNode("@-ms-viewport{width:auto!important}")
-		        );
-		        document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
-		    }
-		})(); 
+		<script type="text/javascript">
+			<!--
+			(function() {
+				if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
+					var msViewportStyle = document.createElement("style");
+					msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+					document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+				}
+			})(); 
 		//-->
-	  </script> 
+		</script> 
 
+		<!-- Le fav and touch icons -->
+		<!-- Update these with your own images
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+		-->
 
-      <!-- Le fav and touch icons -->
-  <!-- Update these with your own images
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
--->
+		<!-- atom & rss feed -->
+		<link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+		<link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
 
-<!-- atom & rss feed -->
-<link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
-<link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+	</head>
 
-</head>
-
-<body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="navbar-inner">
+	<body style="padding-top: 70px;">
+		<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div class="container">
-				<div class="row">
-					<div class="span8 offset2">
-						<button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						
-						<a class="brand" href="{{ HOME_PATH }}" style="text-decoration: none;">{{ site.title }}</a>
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-menu">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand navbar-right" href="{{ HOME_PATH }}">{{ site.title }}</a>
+				</div>
 
-						<div class="nav-collapse collapse pull-left">
-							<ul class="nav">
-								{% assign pages_list = site.pages %}
-								{% assign group = 'home' %}
-								{% include JB/pages_list %}
-								{% assign pages_list = site.pages %}
-								{% assign group = 'navigation' %}
-								{% include JB/pages_list %}
-							</ul>
-						</div>
-					</div>
+				<div class="navbar-collapse collapse" id="bs-menu">
+					<ul class="nav navbar-nav">
+						{% assign pages_list = site.pages %}
+						{% assign group = 'home' %}
+						{% include JB/pages_list %}
+						{% assign pages_list = site.pages %}
+						{% assign group = 'navigation' %}
+						{% include JB/pages_list %}
+					</ul>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="container">
-		<div class="row">
-			<div class="span8 offset2">
+		<div class="container" id="wrap">
+			<div class="row">
 				<div class="content">
 					{{ content }}
 				</div>
 
+				<div id="push"></div>
 				<hr>
-				<footer>
-					<p>Albex's Home v0.3 &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
+				<footer id="footer">
+					<p>Albex's Home v0.4 &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
 						with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-						and <a href="http://aozora.github.io/bootmetro/index.html" target="_blank">BootMetro</a>
 					</p>
 				</footer>
-
-				{% include JB/analytics %}
+				<!--{% include JB/analytics %}-->
 			</div>
 		</div>
-	</div>
-	
-	<!-- Le Javascript -->
-	<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-   	<script src="//code.jquery.com/jquery-1.10.0.min.js"></script>
-   	<script>window.jQuery || document.write("<script src='{{ ASSET_PATH }}/js/jquery-1.10.0.min.js'>\x3C/script>")</script>
 
+		<!-- Le Javascript -->
+		<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+		<script src="//code.jquery.com/jquery-1.10.0.min.js"></script>
+		<!--<script>window.jQuery || document.write("<script src='{{ ASSET_PATH }}/js/jquery-1.10.0.min.js'>\x3C/script>")</script>-->
 
-   	<!--[if IE 7]>
-   	<script type="text/javascript" src="{{ ASSET_PATH }}/js/bootmetro-icons-ie7.js">
-   	<![endif]-->
+		<!--[if IE 7]>
+		<script type="text/javascript" src="{{ ASSET_PATH }}/js/bootmetro-icons-ie7.js">
+			<![endif]-->
 
+		<script type="text/javascript" src="{{ ASSET_PATH }}/js/bootstrap.js"></script>
+		<!--<script type="text/javascript" src="{{ ASSET_PATH }}/js/bootmetro-panorama.js"></script>
+		<script type="text/javascript" src="{{ ASSET_PATH }}/js/bootmetro-pivot.js"></script>
+		<script type="text/javascript" src="{{ ASSET_PATH }}/js/bootmetro-charms.js"></script>
+		<script type="text/javascript" src="{{ ASSET_PATH }}/js/bootstrap-datepicker.js"></script>
+		<script type="text/javascript" src="{{ ASSET_PATH }}/js/holder.js"></script>
+		<script type="text/javascript" src="{{ ASSET_PATH }}/min/Chart.min.js"></script>-->
 
-   	<script type="text/javascript" src="{{ ASSET_PATH }}/js/min/bootstrap.min.js"></script>
-   	<script type="text/javascript" src="{{ ASSET_PATH }}/js/bootmetro-panorama.js"></script>
-   	<script type="text/javascript" src="{{ ASSET_PATH }}/js/bootmetro-pivot.js"></script>
-   	<script type="text/javascript" src="{{ ASSET_PATH }}/js/bootmetro-charms.js"></script>
-   	<script type="text/javascript" src="{{ ASSET_PATH }}/js/bootstrap-datepicker.js"></script>
-   	<script type="text/javascript" src="{{ ASSET_PATH }}/js/holder.js"></script>
-   	<script type="text/javascript" src="{{ ASSET_PATH }}/min/Chart.min.js"></script>
+		<tester id="tagsinput_tag_autosize_tester" style='left: -9999px; top: -9999px; width: auto; letter-spacing: 0px; font-family: "Lato", sans-serif; font-size: 14px; font-weight: 400; white-space: nowrap; position: absolute;'></tester>
 
-	<tester id="tagsinput_tag_autosize_tester" style='left: -9999px; top: -9999px; width: auto; letter-spacing: 0px; font-family: "Lato", sans-serif; font-size: 14px; font-weight: 400; white-space: nowrap; position: absolute;'></tester>
-
-</body>
+	</body>
 </html>
