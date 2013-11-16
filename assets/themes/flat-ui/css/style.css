@@ -1,134 +1,29 @@
-/* Custom container */
-.container-narrow {
-  margin: 0 auto;
-  max-width: 700px; }
-
-.container-narrow > hr {
-  margin: 30px 0; }
-
-.navbar .nav {
-  float: right; }
-
-/* posts index */
-.post > h3.title {
-  position: relative;
-  padding-top: 10px; }
-
-.post > h3.title span.date {
-  position: absolute;
-  right: 0;
-  font-size: 0.9em; }
-
-.post > .more {
-  margin: 10px 0;
-  text-align: left; }
-
-/* post-full*/
-.post-full .date {
-  margin-bottom: 20px;
-  font-weight: bold; }
-
-/* tag_box */
-.tag_box {
-  list-style: none;
-  margin: 0;
-  overflow: hidden; }
-
-.tag_box li {
-  line-height: 28px; }
-
-.tag_box li i {
-  opacity: 0.9; }
-
-.tag_box.inline li {
-  float: left; }
-
-.tag_box a {
-  padding: 3px 6px;
-  margin: 2px;
-  background: #eee;
-  color: #555;
-  border-radius: 3px;
-  text-decoration: none;
-  border: 1px dashed #cccccc; }
-
-.tag_box a span {
-  vertical-align: super;
-  font-size: 0.8em; }
-
-.tag_box a:hover {
-  background-color: #e5e5e5; }
-
-.tag_box a.active {
-  background: #57A957;
-  border: 1px solid #4c964d;
-  color: #FFF; }
-  
-.navbar-inverse .brand {
-	border-bottom: none;
-	border-right: none;
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
 }
 
-.navbar-inverse .nav > li > a {
-	border-bottom: none;
-	border-right: none;
-	border-left: none;
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 60px;
 }
 
-body > .navbar .brand {
-	color: white;
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+#footer {
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-
-.navbar .nav > li:first-child > a {
-   -webkit-border-radius: 0 0 0 0;
-   -moz-border-radius: 0 0 0 0;
-   border-radius: 0 0 0 0;
-}
-
-.navbar .nav ul li:last-child {
-   -webkit-border-radius: 0 0 0 0;
-   -moz-border-radius: 0 0 0 0;
-   border-radius: 6px;
-}
-
-.navbar-inverse.navbar .nav li.open.dropdown > .dropdown-toggle,
-.navbar-inverse.navbar .nav li.active.dropdown > .dropdown-toggle,
-.navbar-inverse.navbar .nav li.open.active.dropdown > .dropdown-toggle {
-   background-color: rgb(52, 73, 94);
-   border-bottom-color: rgb(52, 73, 94);
-   color: #1abc9c;
-}
-
-.navbar-inverse.navbar .nav li.open.dropdown > .dropdown-toggle .caret,
-.navbar-inverse.navbar .nav li.active.dropdown > .dropdown-toggle .caret,
-.navbar-inverse.navbar .nav li.open.active.dropdown > .dropdown-toggle .caret {
-   border-bottom-color: #1abc9c!important;
-   border-top-color: #1abc9c!important;
-   color: #1abc9c!important;
-}
-
-.navbar-inverse .nav > li.active > a,
-.navbar-inverse .nav > li.active > a:hover,
-.navbar-inverse .nav > li.active > a:focus {
-   padding-left: 20px;
-}
-
-@media (max-width: 979px) {
-  .navbar-inverse .nav-collapse .nav > li > a:hover,
-  .navbar-inverse .nav-collapse .nav > li > a:focus,
-  .navbar-inverse .nav-collapse .dropdown-menu a:hover,
-  .navbar-inverse .nav-collapse .dropdown-menu a:focus {
-    background-color: #34495e;
-  }
-  .navbar-inverse .nav-collapse .nav > li.active > a:hover,
-  .navbar-inverse .nav-collapse .nav > li.active > a:focus,
-  .navbar-inverse .nav-collapse .dropdown-menu a:hover,
-  .navbar-inverse .nav-collapse .dropdown-menu a:focus {
-    background-color: #1abc9c;
-  }
-  .navbar .nav > li:first-child > a {
-   -webkit-border-radius: 3px;
-   -moz-border-radius: 3px;
-   border-radius: 3px;
-  }
 }
