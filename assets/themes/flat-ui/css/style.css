@@ -1,8 +1,10 @@
-html,
 body {
-  height: 100%;
-  /* The html and body elements cannot have any padding or margin. */
+  /* Change the background image here  */
+  /*background: url('../img/bg.jpg') #000 top center fixed no-repeat;*/
+  background-size:150%;
+  font-family:'Open Sans',sans-serif;
 }
+
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;
@@ -15,15 +17,16 @@ body {
 /* Set the fixed height of the footer here */
 #push,
 #footer {
+  margin-top: -100px;
   height: 60px;
 }
 
 /* Lastly, apply responsive CSS fixes as necessary */
-@media (max-width: 767px) {
+/*@media (max-width: 767px) {
 #footer {
   margin-left: -20px;
   margin-right: -20px;
   padding-left: 20px;
   padding-right: 20px;
 }
-}
+}*/
