@@ -77,29 +77,19 @@
 			</div>
 		</div>
 
-		<div class="container">
-			<div class="menu col-md-3">
-				<div class="affix well">
-					<div class="row">
-						<ul class="nav">
-							<li><a href="#">Test</a></li>
-							<li class="active"><a href="#">Test</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="content col-md-9" id="wrap">
+		<div class="container" id="wrap">
+			<div class="content">
 				{{ content }}
-
-				<div id="push"></div>
-				<hr>
-				<footer id="footer">
-					<p>Albex's Home v0.4 &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
-						with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
-					</p>
-				</footer>
-			<!--{% include JB/analytics %}-->
 			</div>
+
+			<div id="push"></div>
+			<hr>
+			<footer id="footer">
+				<p>Albex's Home v0.4 &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
+					with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+				</p>
+			</footer>
+			<!--{% include JB/analytics %}-->
 		</div>
 
 		<!-- Le Javascript -->
